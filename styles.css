@@ -1,0 +1,21 @@
+/* Centrado horizontal */
+.controls {
+  display: flex;
+  justify-content: center;   /* centra elementos hijos en el eje horizontal */
+  align-items: center;       /* centra en el eje vertical dentro del contenedor */
+  flex-wrap: wrap;           /* para que los inputs fluyan en varias líneas si hace falta */
+  gap: 1rem;                 /* separa ligeramente los controles */
+  margin: 2rem auto;         /* separación arriba/abajo y auto para centrar el contenedor */
+  max-width: 90%;            /* opcional: para que no ocupe todo el ancho en pantallas grandes */
+}
+
+/* Si quieres centrar todo el .controls también verticalmente en la pantalla */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
