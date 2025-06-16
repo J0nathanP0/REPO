@@ -1,21 +1,71 @@
-/* Centrado horizontal */
-.controls {
-  display: flex;
-  justify-content: center;   /* centra elementos hijos en el eje horizontal */
-  align-items: center;       /* centra en el eje vertical dentro del contenedor */
-  flex-wrap: wrap;           /* para que los inputs fluyan en varias líneas si hace falta */
-  gap: 1rem;                 /* separa ligeramente los controles */
-  margin: 2rem auto;         /* separación arriba/abajo y auto para centrar el contenedor */
-  max-width: 90%;            /* opcional: para que no ocupe todo el ancho en pantallas grandes */
-}
 
-/* Si quieres centrar todo el .controls también verticalmente en la pantalla */
-body, html {
+/* 1. Página completa centrada */
+html, body {
   height: 100%;
   margin: 0;
+  background: burlywood;
 }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* 2. Caja blanca principal */
+.controls {
+  display: flex;
+  background: burlywood;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  gap: 1.5rem;
+  width: max-content;
+}
+
+/* 3. Cada “píldora” */
+.controls .section {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* 4. Separación etiqueta–input */
+.controls .section2 {
+  display: flex;
+  align-items: center;       /* vertical */
+  justify-content: center;   /* horizontal */
+  padding: 0 .75rem;
+  border-radius: 6px;
+}
+
+.controls .section + .section {
+    margin-left: 1rem; /* espacio entre secciones */
+}
+
+/* 5. Inputs más anchos */
+.controls input[type="number"],
+.controls input[type="range"] {
+  min-width: 8rem;
+  margin-left: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+}
+
+/* 6. Botones ligeramente más grandes */
+#startBtn,
+#resetBtn {
+  margin: 0 0.25rem;
+  width: 100px;
+  height: 45px;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#startBtn { background: #4CAF50; }
+#resetBtn { background: #f44336; }
