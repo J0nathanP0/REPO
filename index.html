@@ -44,3 +44,26 @@
 </body>
 </html>
 
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animación Algoritmo Ávido</title>
+    <link rel="stylesheet" href="stylesfib.css">
+    <script src="fibonacci.js" defer></script>
+</head>
+<body>
+    <h1>Animación Algoritmo Fibonacci</h1>
+    <div id="animation-container"></div>
+    <script>
+        const container = document.getElementById("animation-container");
+        const fibonacci = new Fibonacci();
+
+        function animateFibonacci(n) {
+            const result = fibonacci.calculate(n);
+            container.innerHTML = `Fibonacci de ${n} es ${result}`;
+        }
+
+        animateFibonacci(10);
+    </script>
+</body>
